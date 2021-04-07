@@ -1,0 +1,104 @@
+<div class="container">
+    <div class="row">
+          <div class="col">
+            <div class="container formulario1">
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input type="text" matInput value=""  [(ngModel)]="nombre" name="in_nombre" >
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Descripcion</mat-label>
+                    <input type="text" matInput value=""  [(ngModel)]="descripcion" name="in_descripcion" >
+                  </mat-form-field>     
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Existencia</mat-label>
+                    <input type="text" matInput value=""  [(ngModel)]="stock" name="in_stock" >
+                  </mat-form-field>  
+                  <mat-form-field appearance="fill">
+                    <mat-label>Precio</mat-label>
+                    <input type="text" matInput value=""  [(ngModel)]="precio" name="in_precio" >
+                  </mat-form-field>   
+                </div>
+                <div class="col">
+                  <button mat-raised-button color="accent" (click)="crearProducto()"> Registrar Producto </button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="container formulario2">
+      <div class="row">
+        <div class="col">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <mat-form-field appearance="fill">
+                  <mat-label>Código</mat-label>
+                  <input type="text" matInput value=""  [(ngModel)]="codigo" name="in_nombre" >
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Nuevo Precio</mat-label>
+                  <input type="text" matInput value=""  [(ngModel)]="nuevoPrecio" name="in_nuevoPrecio" >
+                </mat-form-field>      
+              </div>
+              <div class="col">
+                <button mat-raised-button color="accent" (click)="actualizarPrecio()"> Cambiar Precio </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+              
+                <!-- Código Column -->
+                <ng-container matColumnDef="codigo">
+                  <th mat-header-cell *matHeaderCellDef> Cod </th>
+                  <td mat-cell *matCellDef="let element"> {{element.id_producto}} </td>
+                </ng-container>
+              
+                <!-- Nombre Column -->
+                <ng-container matColumnDef="nombre">
+                  <th mat-header-cell *matHeaderCellDef> Salario </th>
+                  <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                </ng-container>
+              
+                <!-- Salario Column -->
+                <ng-container matColumnDef="descripcion">
+                  <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+                  <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="stock">
+                  <th mat-header-cell *matHeaderCellDef> Existencia </th>
+                  <td mat-cell *matCellDef="let element"> {{element.stock}} </td>
+                </ng-container>
+                <ng-container matColumnDef="precio">
+                  <th mat-header-cell *matHeaderCellDef> Precio Unidad</th>
+                  <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="remover">
+                  <th mat-header-cell *matHeaderCellDef> Remover </th>
+                  <td mat-cell *matCellDef="let element"> 
+                    <button mat-raised-button color="accent" focusable="false" (click)="eleminarProducto(element.id_producto)">
+                      Eliminar
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>            
+        </div>
+    </div>
+</div>

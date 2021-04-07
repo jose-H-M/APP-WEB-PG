@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+              
+                <!-- Código Column -->
+                <ng-container matColumnDef="codigo">
+                  <th mat-header-cell *matHeaderCellDef> Codigo </th>
+                  <td mat-cell *matCellDef="let element"> {{element.id_historial_precio}} </td>
+                </ng-container>
+              
+                <!-- Nombre Column -->
+                <ng-container matColumnDef="fecha">
+                  <th mat-header-cell *matHeaderCellDef> Fecha </th>
+                  <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+                </ng-container>
+              
+                <!-- Salario Column -->
+                <ng-container matColumnDef="cantidad">
+                  <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+                  <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="variacion">
+                    <th mat-header-cell *matHeaderCellDef> Tipo variación </th>
+                    <td mat-cell *matCellDef="let element"> {{element.aumento_disminucion}} </td>
+                  </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>            
+        </div>
+    </div>
+</div>

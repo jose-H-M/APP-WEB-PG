@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+          <div class="col formulario">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input type="text" matInput value=""  [(ngModel)]="nombre" name="in_nombre" >
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Salario</mat-label>
+                    <input type="text" matInput value=""  [(ngModel)]="salario" name="in_salario" >
+                  </mat-form-field>      
+                </div>
+                <div class="col">
+                  <button mat-raised-button color="accent" (click)="crearEmpleado()">Registrar Empleado</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+              
+                <!-- Código Column -->
+                <ng-container matColumnDef="codigo">
+                  <th mat-header-cell *matHeaderCellDef> Cod </th>
+                  <td mat-cell *matCellDef="let element"> {{element.id_empleado}} </td>
+                </ng-container>
+              
+                <!-- Nombre Column -->
+                <ng-container matColumnDef="nombre">
+                  <th mat-header-cell *matHeaderCellDef> Salario </th>
+                  <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                </ng-container>
+              
+                <!-- Salario Column -->
+                <ng-container matColumnDef="salario">
+                  <th mat-header-cell *matHeaderCellDef> Salario </th>
+                  <td mat-cell *matCellDef="let element"> {{element.salario}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="eliminar">
+                  <th mat-header-cell *matHeaderCellDef> Remover </th>
+                  <td mat-cell *matCellDef="let element"> 
+                    <button mat-raised-button color="accent" focusable="false" (click)="eleminarEmpleado(element.id_empleado);">
+                      Eliminar
+                    </button>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>            
+        </div>
+    </div>
+</div>

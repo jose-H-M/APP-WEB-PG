@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .formulario {
+    background-color: rgb(100, 100, 100);
+    color: white;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }

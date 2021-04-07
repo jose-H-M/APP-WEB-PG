@@ -3,13 +3,28 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 //Componentes
-import { LoginComponent } from './components/login/login.component';
+import { ListaProductosComponent } from './components/lista-productos/lista-productos.component';
+import { ListaEmpleadosComponent } from './components/lista-empleados/lista-empleados.component';
+import { ListaHistorialComponent } from './components/lista-historial/lista-historial.component';
+import { ListaRegistrosComponent } from './components/lista-registros/lista-registros.component';
 
 //Rutas
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent,
+    component: ListaEmpleadosComponent,
+  },
+  {
+    path: 'productos',
+    component: ListaProductosComponent,
+  },
+  {
+    path: 'historial-precios',
+    component: ListaHistorialComponent,
+  },
+  {
+    path: 'registros',
+    component: ListaRegistrosComponent,
   },
 ];
 

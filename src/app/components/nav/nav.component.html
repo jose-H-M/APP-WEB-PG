@@ -1,0 +1,27 @@
+<nav>
+    <mat-toolbar color="primary" class="mat-elevation-z4">
+
+        <span>PostgreSQL</span>
+        <span class="example-spacer"></span>
+    
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="irEmpleados()">
+                <span>Empleados</span>
+            </button>
+            <button mat-menu-item (click)="irProductos()">
+                <span>Productos</span>
+            </button>
+            <button mat-menu-item (click)="irHistorial()">
+                <span>Historial</span>
+            </button>
+            <button mat-menu-item (click)="irRegistros()">
+                <span>Registros</span>
+            </button>
+        </mat-menu>
+    </mat-toolbar>
+</nav>
