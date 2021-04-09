@@ -6,19 +6,16 @@
                 <!--- Note that these columns can be defined in any order.
                       The actual rendered columns are set as a property on the row definition" -->
               
-                <!-- Código Column -->
                 <ng-container matColumnDef="codigo">
                   <th mat-header-cell *matHeaderCellDef> Codigo </th>
                   <td mat-cell *matCellDef="let element"> {{element.id_historial_precio}} </td>
                 </ng-container>
               
-                <!-- Nombre Column -->
                 <ng-container matColumnDef="fecha">
                   <th mat-header-cell *matHeaderCellDef> Fecha </th>
-                  <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+                  <td mat-cell *matCellDef="let element"> {{element.fecha_hora}} </td>
                 </ng-container>
               
-                <!-- Salario Column -->
                 <ng-container matColumnDef="cantidad">
                   <th mat-header-cell *matHeaderCellDef> Cantidad </th>
                   <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
@@ -28,6 +25,12 @@
                     <th mat-header-cell *matHeaderCellDef> Tipo variación </th>
                     <td mat-cell *matCellDef="let element"> {{element.aumento_disminucion}} </td>
                   </ng-container>
+
+
+                <ng-container matColumnDef="producto">
+                  <th mat-header-cell *matHeaderCellDef> Nombre Producto </th>
+                  <td mat-cell *matCellDef="let element"> {{element.producto}} </td>
+                </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

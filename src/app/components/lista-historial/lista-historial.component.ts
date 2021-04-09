@@ -19,7 +19,7 @@ interface PeriodicElement {
 })
 export class ListaHistorialComponent implements OnInit {
 
-  displayedColumns: string[] = ['codigo', 'fecha', 'cantidad','variacion'];
+  displayedColumns: string[] = ['codigo', 'fecha', 'cantidad','variacion','producto'];
   dataSource;
 
 
@@ -40,9 +40,10 @@ export class ListaHistorialComponent implements OnInit {
       {
         this.dataSource.push(
           { id_historial_precio: registro.id_historial_precio,
-            fecha: registro.fecha,
-            cantidad: registro.salario,
-            aumento_disminucion: registro.aumento_disminucion == 1? 'Aumento': 'Disminusiòn'
+            fecha_hora: registro.fecha_hora,
+            cantidad: registro.cantidad,
+            aumento_disminucion: registro.aumento_disminucion == 1? 'Aumento': 'Disminusión',
+            producto: registro.producto
           });
           
       }

@@ -8,7 +8,7 @@ export class ServicePostgresService {
 
   constructor(private  http:HttpClient) { }
 
-  host = "http://localhost:3000";
+  host = "http://35.232.93.187:3000";
 
   //Metodos GET
   getData(){
