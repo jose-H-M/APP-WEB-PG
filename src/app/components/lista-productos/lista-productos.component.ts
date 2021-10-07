@@ -31,7 +31,7 @@ export class ListaProductosComponent implements OnInit {
   precio: number;
 
   codigo: number;
-  nuevoPrecio: number;
+  nuevoStock: number;
   
   @ViewChild(MatTable) tabla: MatTable<PeriodicElement>;
 
@@ -98,10 +98,10 @@ export class ListaProductosComponent implements OnInit {
 
   }
 
-  actualizarPrecio()
+  actualizarStock()
   {
-    let precio ={ precio: this.nuevoPrecio};
-    this.servicio.putPrecio(this.codigo,precio).subscribe((responese:any)=>{
+    let stock ={ stock: this.nuevoStock};
+    this.servicio.putStock(this.codigo,stock).subscribe((responese:any)=>{
       if(responese.msg == 'Correcto')
       {
         this.iniciarProductos();

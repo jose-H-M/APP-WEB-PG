@@ -39,7 +39,7 @@ export class ListaHistorialComponent implements OnInit {
       for(let registro of Historial)
       {
         this.dataSource.push(
-          { id_historial_precio: registro.id_historial_precio,
+          { id_historial: registro.id_historial,
             fecha_hora: registro.fecha_hora,
             cantidad: registro.cantidad,
             aumento_disminucion: registro.aumento_disminucion == 1? 'Aumento': 'Disminusión',

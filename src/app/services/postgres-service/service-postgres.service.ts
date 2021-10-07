@@ -8,7 +8,7 @@ export class ServicePostgresService {
 
   constructor(private  http:HttpClient) { }
 
-  host = "http://35.232.93.187:3000";
+  host = "http://localhost:3000";
 
   //Metodos GET
   getData(){
@@ -54,8 +54,8 @@ export class ServicePostgresService {
   }
 
   //Put Producto
-  putPrecio(id:any,precio: any)
+  putStock(id:any,stock: any)
   {
-    return this.http.put(this.host+'/putPrecio/'+id,precio)
+    return this.http.put(this.host+'/putStock/'+id,stock)
   }
 }
